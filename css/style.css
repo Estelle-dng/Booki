@@ -32,20 +32,16 @@ figcaption {
   font: bold;
 }
 
-.fa-star :last-child {
-  color: red;
-}
-
 /* Menu navigation */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
 }
 
 nav img {
   max-width: 61.09px;
+  padding-top: 44px;
 }
 
 nav ul {
@@ -53,14 +49,20 @@ nav ul {
   justify-content: flex-end;
 }
 
-nav ul li {
+nav li {
   margin-left: 20px;
+  border-top: 2px solid transparent;
+  padding-top: 44px;
+}
+
+nav li:hover,
+nav li:focus {
+  border-color: #0065FC;
 }
 
 nav li a:hover,
 nav li a:focus {
-  border-top: 2px solid #0065FC;
-  padding-top: 15%;
+  color: #0065FC;
 }
 
 body {
@@ -79,8 +81,6 @@ main {
 header h1 {
   font-size: 140%;
 }
-
-
 
 /* Conteneur pour la barre de recherche et le bouton de recherche */
 .form {
@@ -122,7 +122,7 @@ form [type="search"] {
 
 /* bouton  rechercher */
 form button {
-  margin: -7%;
+  margin: -80px;
   width: 132px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -140,15 +140,16 @@ form button {
   display: flex;
   align-items: row;
   flex-wrap: wrap;
+  gap: 60px;
 }
 
 .filters h2 {
   font-size: 16px;
-  margin-right: 2%;
 }
 
 .filters button {
-  margin-right: 3%;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 /* bouttons des filtres */
@@ -161,7 +162,7 @@ form button {
   height: auto;
   border: 2px solid #D9D9D9;
   border-radius: 25px;
-  font-size: 17px;
+  font-size: 1em;
   font-weight: 700;
 }
 
@@ -177,14 +178,13 @@ form button {
   background-color: #DEEBFF;
 }
 
-.fa-circle-info {
-  margin: auto;
-  border: #D9D9D9 1px solid;
-  border-radius: 100%;
-  padding: 7px 7px;
-  color: #0065fc;
+.fa-info {
   justify-content: center;
   align-items: center;
+  border: #D9D9D9 1px solid;
+  border-radius: 100%;
+  padding: 3px 3px 7px 9px;
+  color: #0065fc;
 }
 
 /* hebergements */
@@ -200,6 +200,10 @@ form button {
 
 .hebergements li i.fa-solid {
   color: #0065fc;
+}
+
+.hebergements li i.fa-solid:last-child {
+  color: #F2F2F2;
 }
 
 .hebergements h2 {
@@ -242,7 +246,7 @@ form button {
 }
 
 .hebergements i.fa-solid {
-  margin: 1%;
+  margin: 1px;
   font-size: medium;
 }
 
@@ -263,10 +267,16 @@ form button {
 
 .populaires .fa-solid {
   color: #0065fc;
+  display: flex;
+  align-items: flex-end;
+}
+
+.populaires li i.fa-solid:last-child {
+  color: #F2F2F2;
 }
 
 .populaires .fa-solid.fa-chart-line {
-  /* margin-top: -20px; */
+  margin-top: -20px;
   align-self: end;
 }
 
@@ -288,8 +298,9 @@ form button {
 
 .populaires img {
   object-fit: cover;
-  width: 137px;
+  width: 36%;
   height: 144px;
+  /* ça ne marche pas en % */
   border-radius: 20px 0 0 20px;
 }
 
@@ -305,36 +316,34 @@ form button {
 }
 
 .populaires i.fa-solid {
-  margin: 3%;
+  margin: 3px;
   font-size: medium;
 }
 
 .populaires figcaption {
-  margin-left: 7%;
-  /* 14px */
+  margin-left: 15px;
 }
 
 /* activites */
 aside {
-  display: flex;
-  flex-wrap: wrap;
   background-color: #FFF;
   border-radius: 20px;
   margin: auto;
   margin-top: 20px;
+  gap: 43px;
 }
 
 aside li {
-  display: inline-block;
+  display: flex;
+  align-items: wrap;
   box-shadow: 0 0 10px 0 #E0E0E0;
   border-radius: 20px;
-  margin-right: 44px;
+  width: 302px;
 }
 
 aside img {
   width: 302px;
   height: 389px;
-  margin: auto;
   border-radius: 20px 20px 0 0;
 }
 
@@ -354,18 +363,20 @@ aside figure {
 /*pied de page*/
 .footer {
   display: flex;
-  width: 95%;
+  place-content: space-around;
   background-color: #F2F2F2;
-  padding-left: 70px;
-  padding-top: 45px;
   margin-top: 60px;
+  padding-right: 300px;
+}
+
+.footer section {
+  margin-top: 45px;
 }
 
 footer ul {
   display: flex;
   flex-direction: column;
   line-height: 30px;
-  padding-left: 60px;
 }
 
 .footer li {
