@@ -82,7 +82,7 @@ header h1 {
   font-size: 140%;
 }
 
-/* Conteneur pour la barre de recherche et le bouton de recherche */
+/* barre de recherche et le bouton de recherche */
 .form {
   display: flex;
   justify-content: space-between;
@@ -138,7 +138,6 @@ form button {
 /* Filtres et boutons */
 .filters {
   display: flex;
-  align-items: row;
   flex-wrap: wrap;
   gap: 60px;
 }
@@ -268,7 +267,6 @@ form button {
 .populaires .fa-solid {
   color: #0065fc;
   display: flex;
-  align-items: flex-end;
 }
 
 .populaires li i.fa-solid:last-child {
@@ -292,15 +290,13 @@ form button {
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 0 10px 0 #E0E0E0;
-  margin-top: 21px;
-  margin-bottom: 33px;
+  margin-top: 40px;
 }
 
 .populaires img {
   object-fit: cover;
   width: 36%;
   height: 144px;
-  /* ça ne marche pas en % */
   border-radius: 20px 0 0 20px;
 }
 
@@ -313,6 +309,12 @@ form button {
 
 .populaires figure figure {
   border-left-width: 0px;
+  /*padding-top: 20px; = pour baisser les étoiles */
+}
+
+.populaires figure figure:nth-child(2) {
+  padding-top: 0px;
+  /*ne marche pas*/
 }
 
 .populaires i.fa-solid {
@@ -330,19 +332,22 @@ aside {
   border-radius: 20px;
   margin: auto;
   margin-top: 20px;
-  gap: 43px;
 }
 
 aside li {
-  display: flex;
-  align-items: wrap;
+  display: inline-block;
   box-shadow: 0 0 10px 0 #E0E0E0;
   border-radius: 20px;
   width: 302px;
+  margin-right: 59px;
+}
+
+aside li:last-child {
+  margin-right: 0px;
 }
 
 aside img {
-  width: 302px;
+  width: 100%;
   height: 389px;
   border-radius: 20px 20px 0 0;
 }
@@ -381,4 +386,36 @@ footer ul {
 
 .footer li {
   margin-top: 10px;
+}
+
+/* VERSION TABLETTE */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  .filters {
+    gap: 10px;
+  }
+
+  body {
+    padding-left: 50px;
+    padding-right: 40px;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .hebergements {
+    width: 95%;
+  }
+
+  .populaires {
+    margin-top: 30px;
+    width: 600px;
+  }
+
+  .filtres li {
+    display: flex;
+  }
+
 }
