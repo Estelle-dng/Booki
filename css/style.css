@@ -253,6 +253,10 @@ form button {
   margin-left: 16px;
 }
 
+.show-more {
+  font-weight: bold;
+}
+
 /* populaires */
 .populaires {
   display: flex;
@@ -354,7 +358,7 @@ aside img {
 
 aside figcaption {
   margin-left: 19px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 21px;
   font-weight: 700;
 }
@@ -390,10 +394,14 @@ footer ul {
 
 /* VERSION TABLETTE */
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 769px) and (max-width: 991px) {
 
   .filters {
     gap: 10px;
+  }
+
+  .filtres li {
+    display: flex;
   }
 
   body {
@@ -409,13 +417,44 @@ footer ul {
     width: 95%;
   }
 
+  .hebergements li {
+    width: 28%;
+  }
+
   .populaires {
     margin-top: 30px;
-    width: 600px;
+    width: 90%;
+    padding-bottom: 20px;
+    padding-right: 45px;
   }
 
-  .filtres li {
-    display: flex;
+  .populaires li {
+    display: inline-block;
+    width: 32%;
+    align-items: center;
+    margin-right: 2px;
   }
 
+  /* aside */
+  aside li {
+    width: 20%;
+    margin-right: 53px;
+  }
+
+  aside img {
+    width: 100%;
+    height: 200px;
+  }
+
+  aside figcaption {
+    font-size: 16px;
+    height: 17px;
+  }
+
+  .footer {
+    padding-right: 10px;
+  }
 }
+
+/* VERSION MOBILE */
+@media only screen and (max-width: 768px) {}
