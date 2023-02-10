@@ -394,7 +394,7 @@ footer ul {
 
 /* VERSION TABLETTE */
 
-@media only screen and (min-width: 769px) and (max-width: 991px) {
+@media only screen and (max-width: 992px) {
 
   .filters {
     gap: 10px;
@@ -457,4 +457,36 @@ footer ul {
 }
 
 /* VERSION MOBILE */
-@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 768px) {
+  nav {
+    display: unset;
+  }
+
+  nav img {
+    position: ;
+    right: ;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  nav ul li {
+    padding: 30px 0 30px 0;
+    margin: 0;
+    border-top-width: 0;
+  }
+
+  nav li {
+    width: 100%;
+    border-bottom: 2px solid #f2f2f2;
+  }
+
+  nav ul {
+    text-align: center;
+  }
+
+  h1 {
+    margin-left: 20px;
+  }
+}
