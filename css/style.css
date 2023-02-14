@@ -57,18 +57,18 @@ nav li {
 
 nav li:hover,
 nav li:focus {
-  border-color: #0065FC;
+  border-color: #0065fc;
 }
 
 nav li a:hover,
 nav li a:focus {
-  color: #0065FC;
+  color: #0065fc;
 }
 
 body {
   max-width: 1400px;
   margin: auto;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 main {
@@ -95,7 +95,7 @@ header h1 {
 }
 
 .form i.fa-location-dot {
-  background-color: #0065FC;
+  background-color: #0065fc;
 }
 
 .fa-location-dot {
@@ -114,7 +114,7 @@ form [type="search"] {
   flex: 1;
   padding: 0 10px 0 10px;
   background-color: transparent;
-  border: 1px solid #F2F2F2;
+  border: 1px solid #f2f2f2;
   min-width: 332px;
   height: 49px;
   margin-bottom: 2%;
@@ -131,8 +131,8 @@ form button {
   font-size: 17px;
   font: bold;
   font-weight: 700;
-  color: #F0F2F6;
-  background-color: #0065FC;
+  color: #f0f2f6;
+  background-color: #0065fc;
 }
 
 /* Filtres et boutons */
@@ -159,7 +159,7 @@ form button {
   background-color: transparent;
   width: auto;
   height: auto;
-  border: 2px solid #D9D9D9;
+  border: 2px solid #d9d9d9;
   border-radius: 25px;
   font-size: 1em;
   font-weight: 700;
@@ -174,13 +174,13 @@ form button {
 
 .filters button:hover,
 .filters button:focus {
-  background-color: #DEEBFF;
+  background-color: #deebff;
 }
 
 .fa-info {
   justify-content: center;
   align-items: center;
-  border: #D9D9D9 1px solid;
+  border: #d9d9d9 1px solid;
   border-radius: 100%;
   padding: 3px 3px 7px 9px;
   color: #0065fc;
@@ -190,9 +190,10 @@ form button {
 .hebergements {
   display: flex;
   flex-flow: wrap;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   border-radius: 20px;
   padding-left: 40px;
+  margin: 0 20px; /* crée une marge entre les hébergement et le bord de l'écran */
 }
 
 .hebergements li i.fa-solid {
@@ -200,7 +201,7 @@ form button {
 }
 
 .hebergements li i.fa-solid:last-child {
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 .hebergements h2 {
@@ -219,8 +220,8 @@ form button {
 .hebergements li {
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 0 10px 0 #E0E0E0;
-  width: 23%;
+  box-shadow: 0 0 10px 0 #e0e0e0;
+  width: 30%; /* tu peux passer à 30% au lieu de 23 pour éviter l'espace à gauche */
 }
 
 .hebergements img {
@@ -265,11 +266,12 @@ form button {
 .populaires {
   display: flex;
   flex-flow: column;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   border-radius: 20px;
   width: 30%;
   padding-left: 37px;
   padding-right: 40px;
+  margin-right: 20px; /* crée une marge entre les populaires et le bord de l'écran */
 }
 
 .populaires .fa-solid {
@@ -278,7 +280,7 @@ form button {
 }
 
 .populaires li i.fa-solid:last-child {
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 .populaires .fa-solid.fa-chart-line {
@@ -297,7 +299,7 @@ form button {
   width: auto;
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 0 10px 0 #E0E0E0;
+  box-shadow: 0 0 10px 0 #e0e0e0;
   margin-top: 40px;
 }
 
@@ -339,7 +341,7 @@ form button {
 
 /* activites */
 aside {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 20px;
   margin: auto;
   margin-top: 20px;
@@ -351,19 +353,29 @@ aside ul {
 }
 
 aside li {
-  box-shadow: 0 0 10px 0 #E0E0E0;
+  box-shadow: 0 0 10px 0 #e0e0e0;
   border-radius: 20px;
   width: 23%;
+  overflow: hidden; /* cache ce qui dépasse de l'élément (genre la photo) */
+  height: 445px; /* auteur fidèle à la maquette pour pas que les cards soient trop grandes */
 }
 
 aside li:last-child {
   margin-right: 0px;
 }
 
+aside figure {
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  height: 100%; /* tu dis à ta figure qu'elle doit faire 100% de la hauteur de son parent */
+}
+
 aside img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  /* max-width: 100%; */ /* Au contraire on veut étirer la photo sur les côtés pour augmenter sa taille */
+  min-width: 100%; /* on veut que l'image remplisse au moins la largeur de la card */
+  height: 88%; /* on ne veut pas que la hauteur soit automatique mais définie pour qu'elle prenne presque toute la carte */
+  /* object-fit: contain; */
   border-radius: 20px 20px 0 0;
 }
 
@@ -374,17 +386,11 @@ aside figcaption {
   font-weight: 700;
 }
 
-aside figure {
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-}
-
 /*pied de page*/
 .footer {
   display: flex;
   place-content: space-around;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   margin-top: 60px;
   padding-right: 300px;
 }
@@ -406,7 +412,6 @@ footer ul {
 /* VERSION TABLETTE */
 
 @media (max-width: 991px) {
-
   .filters {
     gap: 10px;
   }
