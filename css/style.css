@@ -36,12 +36,18 @@ header,
 form,
 .filters,
 .info,
-.hebergements,
-aside {
+aside,
+nav {
   padding: 0 50px; /* Comme la maquette */
 }
-footer {
+.hebergements {
   margin-left: 50px;
+}
+.populaires {
+  margin-right: 50px;
+}
+footer {
+  margin: 0 50px;
 }
 
 /* Menu navigation */
@@ -167,6 +173,11 @@ form button {
 }
 
 /* bouttons des filtres */
+.filters ul {
+  display: flex;
+  column-gap: 20px;
+}
+
 .filters button {
   display: flex;
   align-items: center;
@@ -540,7 +551,7 @@ footer ul {
     display: grid;
   }
   .populaires {
-    width: 92% !important; /* à amméliorer */
+    width: 83% !important; /* à amméliorer */
   }
   .populaires ul li {
     width: 260px;
@@ -550,6 +561,10 @@ footer ul {
     flex-wrap: wrap;
     gap: 30px;
     padding-bottom: 40px;
+  }
+  .populaires,
+  .hebergements {
+    margin: 0 50px;
   }
   aside ul li {
     height: 270px;
@@ -598,6 +613,10 @@ footer ul {
     flex-direction: column-reverse;
     display: flex;
   }
+  .hebergements {
+    background-color: white;
+    padding: 0;
+  }
   .hebergements ul {
     grid-row-gap: 20px;
     margin: auto;
@@ -605,7 +624,7 @@ footer ul {
   }
   .hebergements ul li,
   .populaires ul li {
-    min-width: 335px;
+    min-width: 325px;
     width: 100%;
   }
   main {
@@ -614,9 +633,6 @@ footer ul {
   .populaires {
     border-radius: 0;
     width: 100%;
-  }
-  .hebergements {
-    background-color: white;
   }
   aside ul {
     display: grid;
@@ -628,5 +644,9 @@ footer ul {
   .footer {
     padding-right: 0;
     display: grid;
+  }
+  nav,
+  .populaires {
+    margin: 0;
   }
 }
