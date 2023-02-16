@@ -80,6 +80,7 @@ main {
 /* header */
 header h1 {
   font-size: 140%;
+  margin-top: 50px; /* Comme la maquette */
 }
 
 /* barre de recherche et le bouton de recherche */
@@ -140,6 +141,7 @@ form button {
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
+  margin-bottom: 35px; /* Comme la maquette */
 }
 
 .filters h2 {
@@ -177,6 +179,10 @@ form button {
   background-color: #deebff;
 }
 
+.info {
+  margin-bottom: 40px;
+} /* Comme la maquette */
+
 .fa-info {
   justify-content: center;
   align-items: center;
@@ -186,6 +192,11 @@ form button {
   color: #0065fc;
 }
 
+/* MAIN */
+main {
+  gap: 20px;
+}
+
 /* hebergements */
 .hebergements {
   display: flex;
@@ -193,7 +204,6 @@ form button {
   background-color: #f2f2f2;
   border-radius: 20px;
   padding-left: 40px;
-  margin: 0 20px; /* crée une marge entre les hébergement et le bord de l'écran */
 }
 
 .hebergements li i.fa-solid {
@@ -221,7 +231,7 @@ form button {
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 0 10px 0 #e0e0e0;
-  width: 30%; /* tu peux passer à 30% au lieu de 23 pour éviter l'espace à gauche */
+  width: 30%;
 }
 
 .hebergements img {
@@ -271,7 +281,7 @@ form button {
   width: 30%;
   padding-left: 37px;
   padding-right: 40px;
-  margin-right: 20px; /* crée une marge entre les populaires et le bord de l'écran */
+  margin-right: 0;
 }
 
 .populaires .fa-solid {
@@ -344,7 +354,10 @@ aside {
   background-color: #fff;
   border-radius: 20px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 60px; /* Bonne marge (comme la maquette) */
+}
+aside h2 {
+  font-weight: 800;
 }
 
 aside ul {
@@ -356,8 +369,9 @@ aside li {
   box-shadow: 0 0 10px 0 #e0e0e0;
   border-radius: 20px;
   width: 23%;
-  overflow: hidden; /* cache ce qui dépasse de l'élément (genre la photo) */
-  height: 445px; /* auteur fidèle à la maquette pour pas que les cards soient trop grandes */
+  overflow: hidden;
+  /* cache le dépassement, qd ça arrive */
+  height: 445px;
 }
 
 aside li:last-child {
@@ -368,14 +382,13 @@ aside figure {
   margin-right: 0px;
   margin-left: 0px;
   margin-top: 0px;
-  height: 100%; /* tu dis à ta figure qu'elle doit faire 100% de la hauteur de son parent */
+  height: 100%;
+  /* permet à ce que la hauteur respecte son cadre */
 }
 
 aside img {
-  /* max-width: 100%; */ /* Au contraire on veut étirer la photo sur les côtés pour augmenter sa taille */
-  min-width: 100%; /* on veut que l'image remplisse au moins la largeur de la card */
-  height: 88%; /* on ne veut pas que la hauteur soit automatique mais définie pour qu'elle prenne presque toute la carte */
-  /* object-fit: contain; */
+  min-width: 100%;
+  height: 88%;
   border-radius: 20px 20px 0 0;
 }
 
@@ -429,12 +442,12 @@ footer ul {
     flex-direction: column;
   }
 
-  .hebergements {
-    width: 95%;
+  .hebergements ul {
+    width: 100%;
   }
 
-  .hebergements li {
-    width: 28%;
+  .hebergements {
+    width: 95%;
   }
 
   .populaires {
@@ -444,20 +457,41 @@ footer ul {
     padding-right: 45px;
   }
 
-  .populaires li {
-    display: inline-block;
-    width: 32%;
-    align-items: center;
-    margin-right: 2px;
+  .populaires ul {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
   }
 
-  /* aside */
+  .populaires img {
+    width: 50%;
+  }
+
+  .populaires li {
+    width: 32%;
+  }
+
+  /* aside tablet */
   aside li {
-    width: 20%;
     margin-right: 53px;
   }
 
+  aside ul {
+    display: flex;
+    gap: 0px;
+  }
+
+  aside li {
+    height: 250px;
+  }
+
+  aside img {
+    width: 20%;
+    height: 80%;
+  }
+
   aside figcaption {
+    margin-top: 5px;
     font-size: 16px;
   }
 
@@ -470,11 +504,6 @@ footer ul {
 @media (max-width: 767px) {
   nav {
     display: unset;
-  }
-
-  nav img {
-    position: ;
-    right: ;
   }
 
   nav a {
