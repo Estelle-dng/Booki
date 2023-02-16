@@ -69,12 +69,38 @@ body {
   max-width: 1400px;
   margin: auto;
   font-family: "Raleway", sans-serif;
+  padding: 0 50px; /* Comme la maquette */
 }
 
 main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+/* Responsive tablette */
+@media screen and (max-width: 1024px) {
+  main {
+    display: grid;
+  }
+  .populaires {
+    width: 92% !important; /* à amméliorer */
+  }
+  .populaires ul li {
+    width: 260px;
+  }
+  .populaires ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+  aside ul li {
+    height: 270px;
+  }
+  aside ul li a figure {
+    height: 85%;
+  }
 }
 
 /* header */
@@ -406,6 +432,7 @@ aside figcaption {
   background-color: #f2f2f2;
   margin-top: 60px;
   padding-right: 300px;
+  padding-bottom: 20px; /* Comme la maquette */
 }
 
 .footer section {
